@@ -1,0 +1,18 @@
+.DS_Store
+*.zip
+assets/.DS_Store
+# Raw/backup source images not used by the site
+assets/IMG_*.JPG
+assets/IMG_*.jpg
+assets/IMG_*.jpeg
+assets/IMG_*.HEIC
+assets/IMG_*.heif
+assets/Untitled_Artwork*.jpg
+assets/artist_profile.JPG
+assets/kali_hero.png
+assets/work-*.jpg
+assets/01C0762A-*.jpg
+assets/37FB4EB8-*.jpg
+assets/3E300EF9-*.jpg
+assets/6E256C5A-*.jpg
+assets/91682dea-*.jpg

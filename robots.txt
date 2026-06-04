@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://tangerinemudhousetattoos.com/sitemap.xml
