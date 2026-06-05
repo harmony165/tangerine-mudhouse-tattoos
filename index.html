@@ -528,28 +528,6 @@
     html{scroll-behavior:auto;}
   }
 
-  /* ---------- HERO FRAME ANIMATIONS ---------- */
-  @keyframes hero-shake{
-    0%  {transform:translateX(0) translateY(0) rotate(0deg) scale(1);}
-    6%  {transform:translateX(-16px) translateY(-6px) rotate(-2deg) scale(1.03);}
-    14% {transform:translateX(13px) translateY(3px) rotate(1.6deg) scale(1.02);}
-    22% {transform:translateX(-11px) translateY(-2px) rotate(-1.2deg) scale(1.01);}
-    30% {transform:translateX(10px) translateY(1px) rotate(1deg);}
-    38% {transform:translateX(-8px) rotate(-.8deg);}
-    46% {transform:translateX(7px) rotate(.6deg);}
-    54% {transform:translateX(-5px) rotate(-.45deg);}
-    62% {transform:translateX(4px) rotate(.3deg);}
-    70% {transform:translateX(-3px) rotate(-.2deg);}
-    78% {transform:translateX(2px) rotate(.15deg);}
-    87% {transform:translateX(-1px);}
-    100%{transform:translateX(0) translateY(0) rotate(0deg) scale(1);}
-  }
-  @keyframes hero-breathe{
-    0%,100%{transform:translateY(0);}
-    50%{transform:translateY(-9px);}
-  }
-  .frame.is-shaking{animation:hero-shake 2s ease-out;}
-  .frame.is-breathing{animation:hero-breathe 3.6s ease-in-out infinite;}
 
   /* ---------- DIVIDER DRAW ANIMATIONS ---------- */
   .divider.pre-ltr{clip-path:inset(0 100% 0 0);}
@@ -565,7 +543,6 @@
   .divider.draw-ltr{animation:divider-ltr 1s cubic-bezier(.22,1,.36,1) forwards;}
   .divider.draw-rtl{animation:divider-rtl 1s cubic-bezier(.22,1,.36,1) forwards;}
   @media(prefers-reduced-motion:reduce){
-    .frame.is-shaking,.frame.is-breathing{animation:none;}
     .divider.pre-ltr,.divider.pre-rtl{clip-path:none;}
     .divider.draw-ltr,.divider.draw-rtl{animation:none;}
   }
@@ -1039,19 +1016,6 @@
   }, { threshold:0.08, rootMargin:'0px 0px -6% 0px' });
   document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
   requestAnimationFrame(function(){ document.querySelector('.hero').classList.add('in'); });
-
-  // hero: shake once on load, then breathe forever
-  (function(){
-    if(window.matchMedia('(prefers-reduced-motion:reduce)').matches) return;
-    var frame = document.querySelector('.frame');
-    if(!frame) return;
-    frame.classList.add('is-shaking');
-    frame.addEventListener('animationend', function h(){
-      frame.classList.remove('is-shaking');
-      frame.classList.add('is-breathing');
-      frame.removeEventListener('animationend', h);
-    });
-  })();
 
   // dividers: reveal L→R / R→L alternating on scroll
   (function(){
