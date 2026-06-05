@@ -532,6 +532,14 @@
     html{scroll-behavior:auto;}
   }
 
+  /* ---------- HERO BREATHE ---------- */
+  @keyframes hero-breathe{
+    0%,100%{transform:translateY(0);}
+    50%{transform:translateY(-9px);}
+  }
+  .frame.is-breathing{animation:hero-breathe 3.6s ease-in-out infinite;}
+  @media(prefers-reduced-motion:reduce){.frame.is-breathing{animation:none;}}
+
 
   /* ---------- DIVIDER DRAW ANIMATIONS ---------- */
   .divider.pre-ltr{clip-path:inset(0 100% 0 0);}
@@ -1022,6 +1030,13 @@
   }, { threshold:0.08, rootMargin:'0px 0px -6% 0px' });
   document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
   requestAnimationFrame(function(){ document.querySelector('.hero').classList.add('in'); });
+
+  // hero breathe
+  (function(){
+    if(window.matchMedia('(prefers-reduced-motion:reduce)').matches) return;
+    var frame = document.querySelector('.frame');
+    if(frame) frame.classList.add('is-breathing');
+  })();
 
   // dividers: reveal L→R / R→L alternating on scroll
   (function(){
