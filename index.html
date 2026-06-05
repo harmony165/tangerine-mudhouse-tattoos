@@ -530,20 +530,25 @@
 
   /* ---------- HERO FRAME ANIMATIONS ---------- */
   @keyframes hero-shake{
-    0%,100%{transform:translateX(0) rotate(0deg);}
-    12%{transform:translateX(-8px) rotate(-1deg);}
-    24%{transform:translateX(7px) rotate(.8deg);}
-    36%{transform:translateX(-5px) rotate(-.5deg);}
-    50%{transform:translateX(5px) rotate(.5deg);}
-    64%{transform:translateX(-3px);}
-    78%{transform:translateX(2px);}
-    90%{transform:translateX(-1px);}
+    0%  {transform:translateX(0) translateY(0) rotate(0deg) scale(1);}
+    6%  {transform:translateX(-16px) translateY(-6px) rotate(-2deg) scale(1.03);}
+    14% {transform:translateX(13px) translateY(3px) rotate(1.6deg) scale(1.02);}
+    22% {transform:translateX(-11px) translateY(-2px) rotate(-1.2deg) scale(1.01);}
+    30% {transform:translateX(10px) translateY(1px) rotate(1deg);}
+    38% {transform:translateX(-8px) rotate(-.8deg);}
+    46% {transform:translateX(7px) rotate(.6deg);}
+    54% {transform:translateX(-5px) rotate(-.45deg);}
+    62% {transform:translateX(4px) rotate(.3deg);}
+    70% {transform:translateX(-3px) rotate(-.2deg);}
+    78% {transform:translateX(2px) rotate(.15deg);}
+    87% {transform:translateX(-1px);}
+    100%{transform:translateX(0) translateY(0) rotate(0deg) scale(1);}
   }
   @keyframes hero-breathe{
     0%,100%{transform:translateY(0);}
     50%{transform:translateY(-9px);}
   }
-  .frame.is-shaking{animation:hero-shake .85s ease-out;}
+  .frame.is-shaking{animation:hero-shake 2s ease-out;}
   .frame.is-breathing{animation:hero-breathe 3.6s ease-in-out infinite;}
 
   /* ---------- DIVIDER DRAW ANIMATIONS ---------- */
