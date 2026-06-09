@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="theme-color" content="#3D0F0F" />
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml" />
 
 <!-- ===== SEO ===== -->
 <title>Pattachitra Tattoo Artist, Bengaluru | Tangerine Mudhouse</title>
@@ -77,7 +79,17 @@
     --ink:#1A0808;
     --container:900px;
     --nav-h:58px;
+    --border-band:url("data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='18' viewBox='0 0 40 18'><g fill='none' stroke='%23F5EDD8' stroke-width='1.4' stroke-linejoin='round' stroke-linecap='round'><path d='M0,13 L10,4 L20,13 M20,4 L30,13 L40,4'/><circle cx='5' cy='16' r='1.1' fill='%23F5EDD8' stroke='none'/><circle cx='15' cy='16' r='1.1' fill='%23F5EDD8' stroke='none'/><circle cx='25' cy='16' r='1.1' fill='%23F5EDD8' stroke='none'/><circle cx='35' cy='16' r='1.1' fill='%23F5EDD8' stroke='none'/></g></svg>");
   }
+
+  .skip-link{
+    position:absolute;top:-100%;left:0;z-index:200;
+    padding:10px 18px;
+    background:var(--turmeric);color:var(--ink);
+    font-family:"Space Mono",monospace;font-size:12px;letter-spacing:.1em;
+    text-decoration:none;
+  }
+  .skip-link:focus{top:0;}
 
   *{box-sizing:border-box;}
   html{scroll-behavior:smooth;scroll-padding-top:var(--nav-h);}
@@ -156,7 +168,9 @@
     letter-spacing:.6px;
     line-height:1;
     white-space:nowrap;
+    display:flex;align-items:center;gap:9px;
   }
+  .logo img{width:28px;height:28px;flex-shrink:0;border-radius:3px;}
   .logo:hover{color:var(--turmeric);}
   .nav-links{
     display:flex;gap:30px;align-items:center;
@@ -619,6 +633,8 @@
 </head>
 <body>
 
+<a class="skip-link" href="#main-content">Skip to main content</a>
+
 <!-- ============ SVG DEFS ============ -->
 <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
   <defs>
@@ -688,7 +704,10 @@
 <!-- ============ NAV ============ -->
 <nav aria-label="Main navigation">
   <div class="container">
-    <a href="#top" class="logo" aria-label="Tangerine Mudhouse Tattoos — home">Tangerine Mudhouse Tattoos</a>
+    <a href="#top" class="logo" aria-label="Tangerine Mudhouse Tattoos — home">
+      <img src="assets/favicon.svg" alt="" width="28" height="28" aria-hidden="true" />
+      Tangerine Mudhouse Tattoos
+    </a>
     <ul class="nav-links" role="list">
       <li><a href="#about">about</a></li>
       <li><a href="#gallery">gallery</a></li>
@@ -707,6 +726,7 @@
   <svg class="ov-band bottom" preserveAspectRatio="none" aria-hidden="true"><rect width="100%" height="34" fill="url(#borderPat)"/></svg>
 </div>
 
+<main id="main-content">
 <a id="top"></a>
 
 <!-- ============ HERO ============ -->
@@ -717,12 +737,15 @@
   <div class="frame">
     <span class="inner-rule" aria-hidden="true"><svg preserveAspectRatio="none"><rect width="100%" height="18" fill="url(#borderPatThin)"/></svg></span>
     <div class="art-wrap">
-      <img
-        src="assets/kali_hero.jpg"
-        alt="Pattachitra painting of Kali — fierce deity rendered in tangerine and gold line-work on black, by tattoo artist Mourya"
-        width="541" height="900"
-        fetchpriority="high"
-      />
+      <picture>
+        <source srcset="assets/kali_hero.webp" type="image/webp" />
+        <img
+          src="assets/kali_hero.jpg"
+          alt="Pattachitra painting of Kali — fierce deity rendered in tangerine and gold line-work on black, by tattoo artist Mourya"
+          width="541" height="900"
+          fetchpriority="high"
+        />
+      </picture>
     </div>
     <span class="inner-rule" aria-hidden="true"><svg preserveAspectRatio="none"><rect width="100%" height="18" fill="url(#borderPatThin)"/></svg></span>
   </div>
@@ -748,12 +771,15 @@
       <div class="artist-frame">
         <span class="inner-rule" aria-hidden="true"><svg preserveAspectRatio="none"><rect width="100%" height="18" fill="url(#borderPatThin)"/></svg></span>
         <div class="art-wrap">
-          <img
-            src="assets/artist_profile_c.jpg"
-            alt="Portrait of Mourya, tattoo artist at Tangerine Mudhouse Tattoos, Bengaluru"
-            width="599" height="900"
-            loading="lazy"
-          />
+          <picture>
+            <source srcset="assets/artist_profile_c.webp" type="image/webp" />
+            <img
+              src="assets/artist_profile_c.jpg"
+              alt="Portrait of Mourya, tattoo artist at Tangerine Mudhouse Tattoos, Bengaluru"
+              width="599" height="900"
+              loading="lazy"
+            />
+          </picture>
         </div>
         <span class="inner-rule" aria-hidden="true"><svg preserveAspectRatio="none"><rect width="100%" height="18" fill="url(#borderPatThin)"/></svg></span>
       </div>
@@ -773,41 +799,41 @@
     <p class="kicker">ink on skin · scroll on wall</p>
     <div class="gallery-shell">
       <div class="masonry" id="masonry">
-        <figure class="cell" tabindex="0" data-i="0"><span class="ph"><img src="assets/gallery/g28.jpg" alt="Tattoo artwork by Mourya" loading="lazy" /></span></figure>
-        <figure class="cell" tabindex="0" data-i="1"><span class="ph"><img src="assets/gallery/g01.jpg" alt="Tattoo artwork by Mourya" loading="lazy" /></span></figure>
-        <figure class="cell" tabindex="0" data-i="2"><span class="ph"><img src="assets/gallery/g02.jpg" alt="Tattoo artwork by Mourya" loading="lazy" /></span></figure>
-        <figure class="cell" tabindex="0" data-i="3"><span class="ph"><img src="assets/gallery/g03.jpg" alt="Tattoo artwork by Mourya" loading="lazy" /></span></figure>
-        <figure class="cell" tabindex="0" data-i="4"><span class="ph"><img src="assets/gallery/g04.jpg" alt="Tattoo artwork by Mourya" loading="lazy" /></span></figure>
-        <figure class="cell" tabindex="0" data-i="5"><span class="ph"><img src="assets/gallery/g06.jpg" alt="Tattoo artwork by Mourya" loading="lazy" /></span></figure>
-        <figure class="cell" tabindex="0" data-i="6"><span class="ph"><img src="assets/gallery/g07.jpg" alt="Tattoo artwork by Mourya" loading="lazy" /></span></figure>
-        <figure class="cell" tabindex="0" data-i="7"><span class="ph"><img src="assets/gallery/g08.jpg" alt="Tattoo artwork by Mourya" loading="lazy" /></span></figure>
-        <figure class="cell" tabindex="0" data-i="8"><span class="ph"><img src="assets/gallery/g27.jpg" alt="Tattoo artwork by Mourya" loading="lazy" /></span></figure>
-        <figure class="cell" tabindex="0" data-i="9"><span class="ph"><img src="assets/gallery/g09.jpg" alt="Tattoo artwork by Mourya" loading="lazy" /></span></figure>
-        <figure class="cell" tabindex="0" data-i="10"><span class="ph"><img src="assets/gallery/g10.jpg" alt="Tattoo artwork by Mourya" loading="lazy" /></span></figure>
-        <figure class="cell" tabindex="0" data-i="11"><span class="ph"><img src="assets/gallery/g11.jpg" alt="Tattoo artwork by Mourya" loading="lazy" /></span></figure>
-        <figure class="cell" tabindex="0" data-i="12"><span class="ph"><img src="assets/gallery/g12.jpg" alt="Tattoo artwork by Mourya" loading="lazy" /></span></figure>
-        <figure class="cell" tabindex="0" data-i="13"><span class="ph"><img src="assets/gallery/g13.jpg" alt="Tattoo artwork by Mourya" loading="lazy" /></span></figure>
-        <figure class="cell" tabindex="0" data-i="14"><span class="ph"><img src="assets/gallery/g14.jpg" alt="Tattoo artwork by Mourya" loading="lazy" /></span></figure>
-        <figure class="cell" tabindex="0" data-i="15"><span class="ph"><img src="assets/gallery/g15.jpg" alt="Tattoo artwork by Mourya" loading="lazy" /></span></figure>
-        <figure class="cell" tabindex="0" data-i="16"><span class="ph"><img src="assets/gallery/g16.jpg" alt="Tattoo artwork by Mourya" loading="lazy" /></span></figure>
-        <figure class="cell" tabindex="0" data-i="17"><span class="ph"><img src="assets/gallery/g34.jpg" alt="Tattoo artwork by Mourya" loading="lazy" /></span></figure>
-        <figure class="cell" tabindex="0" data-i="18"><span class="ph"><img src="assets/gallery/g17.jpg" alt="Tattoo artwork by Mourya" loading="lazy" /></span></figure>
-        <figure class="cell" tabindex="0" data-i="19"><span class="ph"><img src="assets/gallery/g18.jpg" alt="Tattoo artwork by Mourya" loading="lazy" /></span></figure>
-        <figure class="cell" tabindex="0" data-i="20"><span class="ph"><img src="assets/gallery/g19.jpg" alt="Tattoo artwork by Mourya" loading="lazy" /></span></figure>
-        <figure class="cell" tabindex="0" data-i="21"><span class="ph"><img src="assets/gallery/g20.jpg" alt="Tattoo artwork by Mourya" loading="lazy" /></span></figure>
-        <figure class="cell" tabindex="0" data-i="22"><span class="ph"><img src="assets/gallery/g21.jpg" alt="Tattoo artwork by Mourya" loading="lazy" /></span></figure>
-        <figure class="cell" tabindex="0" data-i="23"><span class="ph"><img src="assets/gallery/g22.jpg" alt="Tattoo artwork by Mourya" loading="lazy" /></span></figure>
-        <figure class="cell" tabindex="0" data-i="24"><span class="ph"><img src="assets/gallery/g23.jpg" alt="Tattoo artwork by Mourya" loading="lazy" /></span></figure>
-        <figure class="cell" tabindex="0" data-i="25"><span class="ph"><img src="assets/gallery/g24.jpg" alt="Tattoo artwork by Mourya" loading="lazy" /></span></figure>
-        <figure class="cell" tabindex="0" data-i="26"><span class="ph"><img src="assets/gallery/g25.jpg" alt="Tattoo artwork by Mourya" loading="lazy" /></span></figure>
-        <figure class="cell" tabindex="0" data-i="27"><span class="ph"><img src="assets/gallery/g26.jpg" alt="Tattoo artwork by Mourya" loading="lazy" /></span></figure>
-        <figure class="cell" tabindex="0" data-i="28"><span class="ph"><img src="assets/gallery/g29.jpg" alt="Tattoo artwork by Mourya" loading="lazy" /></span></figure>
-        <figure class="cell" tabindex="0" data-i="29"><span class="ph"><img src="assets/gallery/g30.jpg" alt="Tattoo artwork by Mourya" loading="lazy" /></span></figure>
-        <figure class="cell" tabindex="0" data-i="30"><span class="ph"><img src="assets/gallery/g31.jpg" alt="Tattoo artwork by Mourya" loading="lazy" /></span></figure>
-        <figure class="cell" tabindex="0" data-i="31"><span class="ph"><img src="assets/gallery/g32.jpg" alt="Tattoo artwork by Mourya" loading="lazy" /></span></figure>
-        <figure class="cell" tabindex="0" data-i="32"><span class="ph"><img src="assets/gallery/g33.jpg" alt="Tattoo artwork by Mourya" loading="lazy" /></span></figure>
-        <figure class="cell" tabindex="0" data-i="33"><span class="ph"><img src="assets/gallery/g05.jpg" alt="Tattoo artwork by Mourya" loading="lazy" /></span></figure>
-        <figure class="cell" tabindex="0" data-i="34"><span class="ph"><img src="assets/gallery/g35.jpg" alt="Tattoo artwork by Mourya" loading="lazy" /></span></figure>
+        <figure class="cell" role="button" tabindex="0"><span class="ph"><picture><source srcset="assets/gallery/g28.webp" type="image/webp" /><img src="assets/gallery/g28.jpg" alt="Pattachitra tattoo by Mourya — piece 1" width="300" height="400" loading="lazy" /></picture></span></figure>
+        <figure class="cell" role="button" tabindex="0"><span class="ph"><picture><source srcset="assets/gallery/g01.webp" type="image/webp" /><img src="assets/gallery/g01.jpg" alt="Pattachitra tattoo by Mourya — piece 2" width="300" height="400" loading="lazy" /></picture></span></figure>
+        <figure class="cell" role="button" tabindex="0"><span class="ph"><picture><source srcset="assets/gallery/g02.webp" type="image/webp" /><img src="assets/gallery/g02.jpg" alt="Pattachitra tattoo by Mourya — piece 3" width="300" height="400" loading="lazy" /></picture></span></figure>
+        <figure class="cell" role="button" tabindex="0"><span class="ph"><picture><source srcset="assets/gallery/g03.webp" type="image/webp" /><img src="assets/gallery/g03.jpg" alt="Pattachitra tattoo by Mourya — piece 4" width="300" height="400" loading="lazy" /></picture></span></figure>
+        <figure class="cell" role="button" tabindex="0"><span class="ph"><picture><source srcset="assets/gallery/g04.webp" type="image/webp" /><img src="assets/gallery/g04.jpg" alt="Pattachitra tattoo by Mourya — piece 5" width="300" height="400" loading="lazy" /></picture></span></figure>
+        <figure class="cell" role="button" tabindex="0"><span class="ph"><picture><source srcset="assets/gallery/g06.webp" type="image/webp" /><img src="assets/gallery/g06.jpg" alt="Pattachitra tattoo by Mourya — piece 6" width="300" height="400" loading="lazy" /></picture></span></figure>
+        <figure class="cell" role="button" tabindex="0"><span class="ph"><picture><source srcset="assets/gallery/g07.webp" type="image/webp" /><img src="assets/gallery/g07.jpg" alt="Pattachitra tattoo by Mourya — piece 7" width="300" height="400" loading="lazy" /></picture></span></figure>
+        <figure class="cell" role="button" tabindex="0"><span class="ph"><picture><source srcset="assets/gallery/g08.webp" type="image/webp" /><img src="assets/gallery/g08.jpg" alt="Pattachitra tattoo by Mourya — piece 8" width="300" height="400" loading="lazy" /></picture></span></figure>
+        <figure class="cell" role="button" tabindex="0"><span class="ph"><picture><source srcset="assets/gallery/g27.webp" type="image/webp" /><img src="assets/gallery/g27.jpg" alt="Pattachitra tattoo by Mourya — piece 9" width="300" height="400" loading="lazy" /></picture></span></figure>
+        <figure class="cell" role="button" tabindex="0"><span class="ph"><picture><source srcset="assets/gallery/g09.webp" type="image/webp" /><img src="assets/gallery/g09.jpg" alt="Pattachitra tattoo by Mourya — piece 10" width="300" height="400" loading="lazy" /></picture></span></figure>
+        <figure class="cell" role="button" tabindex="0"><span class="ph"><picture><source srcset="assets/gallery/g10.webp" type="image/webp" /><img src="assets/gallery/g10.jpg" alt="Pattachitra tattoo by Mourya — piece 11" width="300" height="400" loading="lazy" /></picture></span></figure>
+        <figure class="cell" role="button" tabindex="0"><span class="ph"><picture><source srcset="assets/gallery/g11.webp" type="image/webp" /><img src="assets/gallery/g11.jpg" alt="Pattachitra tattoo by Mourya — piece 12" width="300" height="400" loading="lazy" /></picture></span></figure>
+        <figure class="cell" role="button" tabindex="0"><span class="ph"><picture><source srcset="assets/gallery/g12.webp" type="image/webp" /><img src="assets/gallery/g12.jpg" alt="Pattachitra tattoo by Mourya — piece 13" width="300" height="400" loading="lazy" /></picture></span></figure>
+        <figure class="cell" role="button" tabindex="0"><span class="ph"><picture><source srcset="assets/gallery/g13.webp" type="image/webp" /><img src="assets/gallery/g13.jpg" alt="Pattachitra tattoo by Mourya — piece 14" width="300" height="400" loading="lazy" /></picture></span></figure>
+        <figure class="cell" role="button" tabindex="0"><span class="ph"><picture><source srcset="assets/gallery/g14.webp" type="image/webp" /><img src="assets/gallery/g14.jpg" alt="Pattachitra tattoo by Mourya — piece 15" width="300" height="400" loading="lazy" /></picture></span></figure>
+        <figure class="cell" role="button" tabindex="0"><span class="ph"><picture><source srcset="assets/gallery/g15.webp" type="image/webp" /><img src="assets/gallery/g15.jpg" alt="Pattachitra tattoo by Mourya — piece 16" width="300" height="400" loading="lazy" /></picture></span></figure>
+        <figure class="cell" role="button" tabindex="0"><span class="ph"><picture><source srcset="assets/gallery/g16.webp" type="image/webp" /><img src="assets/gallery/g16.jpg" alt="Pattachitra tattoo by Mourya — piece 17" width="300" height="400" loading="lazy" /></picture></span></figure>
+        <figure class="cell" role="button" tabindex="0"><span class="ph"><picture><source srcset="assets/gallery/g34.webp" type="image/webp" /><img src="assets/gallery/g34.jpg" alt="Pattachitra tattoo by Mourya — piece 18" width="300" height="400" loading="lazy" /></picture></span></figure>
+        <figure class="cell" role="button" tabindex="0"><span class="ph"><picture><source srcset="assets/gallery/g17.webp" type="image/webp" /><img src="assets/gallery/g17.jpg" alt="Pattachitra tattoo by Mourya — piece 19" width="300" height="400" loading="lazy" /></picture></span></figure>
+        <figure class="cell" role="button" tabindex="0"><span class="ph"><picture><source srcset="assets/gallery/g18.webp" type="image/webp" /><img src="assets/gallery/g18.jpg" alt="Pattachitra tattoo by Mourya — piece 20" width="300" height="400" loading="lazy" /></picture></span></figure>
+        <figure class="cell" role="button" tabindex="0"><span class="ph"><picture><source srcset="assets/gallery/g19.webp" type="image/webp" /><img src="assets/gallery/g19.jpg" alt="Pattachitra tattoo by Mourya — piece 21" width="300" height="400" loading="lazy" /></picture></span></figure>
+        <figure class="cell" role="button" tabindex="0"><span class="ph"><picture><source srcset="assets/gallery/g20.webp" type="image/webp" /><img src="assets/gallery/g20.jpg" alt="Pattachitra tattoo by Mourya — piece 22" width="300" height="400" loading="lazy" /></picture></span></figure>
+        <figure class="cell" role="button" tabindex="0"><span class="ph"><picture><source srcset="assets/gallery/g21.webp" type="image/webp" /><img src="assets/gallery/g21.jpg" alt="Pattachitra tattoo by Mourya — piece 23" width="300" height="400" loading="lazy" /></picture></span></figure>
+        <figure class="cell" role="button" tabindex="0"><span class="ph"><picture><source srcset="assets/gallery/g22.webp" type="image/webp" /><img src="assets/gallery/g22.jpg" alt="Pattachitra tattoo by Mourya — piece 24" width="300" height="400" loading="lazy" /></picture></span></figure>
+        <figure class="cell" role="button" tabindex="0"><span class="ph"><picture><source srcset="assets/gallery/g23.webp" type="image/webp" /><img src="assets/gallery/g23.jpg" alt="Pattachitra tattoo by Mourya — piece 25" width="300" height="400" loading="lazy" /></picture></span></figure>
+        <figure class="cell" role="button" tabindex="0"><span class="ph"><picture><source srcset="assets/gallery/g24.webp" type="image/webp" /><img src="assets/gallery/g24.jpg" alt="Pattachitra tattoo by Mourya — piece 26" width="300" height="400" loading="lazy" /></picture></span></figure>
+        <figure class="cell" role="button" tabindex="0"><span class="ph"><picture><source srcset="assets/gallery/g25.webp" type="image/webp" /><img src="assets/gallery/g25.jpg" alt="Pattachitra tattoo by Mourya — piece 27" width="300" height="400" loading="lazy" /></picture></span></figure>
+        <figure class="cell" role="button" tabindex="0"><span class="ph"><picture><source srcset="assets/gallery/g26.webp" type="image/webp" /><img src="assets/gallery/g26.jpg" alt="Pattachitra tattoo by Mourya — piece 28" width="300" height="400" loading="lazy" /></picture></span></figure>
+        <figure class="cell" role="button" tabindex="0"><span class="ph"><picture><source srcset="assets/gallery/g29.webp" type="image/webp" /><img src="assets/gallery/g29.jpg" alt="Pattachitra tattoo by Mourya — piece 29" width="300" height="400" loading="lazy" /></picture></span></figure>
+        <figure class="cell" role="button" tabindex="0"><span class="ph"><picture><source srcset="assets/gallery/g30.webp" type="image/webp" /><img src="assets/gallery/g30.jpg" alt="Pattachitra tattoo by Mourya — piece 30" width="300" height="400" loading="lazy" /></picture></span></figure>
+        <figure class="cell" role="button" tabindex="0"><span class="ph"><picture><source srcset="assets/gallery/g31.webp" type="image/webp" /><img src="assets/gallery/g31.jpg" alt="Pattachitra tattoo by Mourya — piece 31" width="300" height="400" loading="lazy" /></picture></span></figure>
+        <figure class="cell" role="button" tabindex="0"><span class="ph"><picture><source srcset="assets/gallery/g32.webp" type="image/webp" /><img src="assets/gallery/g32.jpg" alt="Pattachitra tattoo by Mourya — piece 32" width="300" height="400" loading="lazy" /></picture></span></figure>
+        <figure class="cell" role="button" tabindex="0"><span class="ph"><picture><source srcset="assets/gallery/g33.webp" type="image/webp" /><img src="assets/gallery/g33.jpg" alt="Pattachitra tattoo by Mourya — piece 33" width="300" height="400" loading="lazy" /></picture></span></figure>
+        <figure class="cell" role="button" tabindex="0"><span class="ph"><picture><source srcset="assets/gallery/g05.webp" type="image/webp" /><img src="assets/gallery/g05.jpg" alt="Pattachitra tattoo by Mourya — piece 34" width="300" height="400" loading="lazy" /></picture></span></figure>
+        <figure class="cell" role="button" tabindex="0"><span class="ph"><picture><source srcset="assets/gallery/g35.webp" type="image/webp" /><img src="assets/gallery/g35.jpg" alt="Pattachitra tattoo by Mourya — piece 35" width="300" height="400" loading="lazy" /></picture></span></figure>
       </div>
       <div class="gallery-footer" id="galleryFooter">
         <button class="gallery-load-more" id="galleryLoadMore">Load more</button>
@@ -870,7 +896,7 @@
         <div class="faq-list" id="faqList">
 
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false" aria-controls="faq-0">
+            <button id="faq-0-btn" class="faq-q" aria-expanded="false" aria-controls="faq-0">
               <span>How do I book a consultation?</span>
               <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5.5L8 10.5L13 5.5"/></svg>
             </button>
@@ -880,7 +906,7 @@
           </div>
 
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false" aria-controls="faq-1">
+            <button id="faq-1-btn" class="faq-q" aria-expanded="false" aria-controls="faq-1">
               <span>How far in advance should I plan?</span>
               <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5.5L8 10.5L13 5.5"/></svg>
             </button>
@@ -890,7 +916,7 @@
           </div>
 
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false" aria-controls="faq-2">
+            <button id="faq-2-btn" class="faq-q" aria-expanded="false" aria-controls="faq-2">
               <span>What should I do to prepare for my session?</span>
               <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5.5L8 10.5L13 5.5"/></svg>
             </button>
@@ -900,7 +926,7 @@
           </div>
 
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false" aria-controls="faq-3">
+            <button id="faq-3-btn" class="faq-q" aria-expanded="false" aria-controls="faq-3">
               <span>Does getting a tattoo hurt?</span>
               <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5.5L8 10.5L13 5.5"/></svg>
             </button>
@@ -910,7 +936,7 @@
           </div>
 
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false" aria-controls="faq-4">
+            <button id="faq-4-btn" class="faq-q" aria-expanded="false" aria-controls="faq-4">
               <span>How long does the healing process take?</span>
               <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5.5L8 10.5L13 5.5"/></svg>
             </button>
@@ -920,7 +946,7 @@
           </div>
 
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false" aria-controls="faq-5">
+            <button id="faq-5-btn" class="faq-q" aria-expanded="false" aria-controls="faq-5">
               <span>What aftercare should I follow?</span>
               <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5.5L8 10.5L13 5.5"/></svg>
             </button>
@@ -930,7 +956,7 @@
           </div>
 
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false" aria-controls="faq-6">
+            <button id="faq-6-btn" class="faq-q" aria-expanded="false" aria-controls="faq-6">
               <span>Can I bring my own reference or design?</span>
               <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5.5L8 10.5L13 5.5"/></svg>
             </button>
@@ -940,7 +966,7 @@
           </div>
 
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false" aria-controls="faq-7">
+            <button id="faq-7-btn" class="faq-q" aria-expanded="false" aria-controls="faq-7">
               <span>How many sessions will my tattoo take?</span>
               <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5.5L8 10.5L13 5.5"/></svg>
             </button>
@@ -950,7 +976,7 @@
           </div>
 
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false" aria-controls="faq-8">
+            <button id="faq-8-btn" class="faq-q" aria-expanded="false" aria-controls="faq-8">
               <span>Can existing tattoos be reworked or covered up?</span>
               <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5.5L8 10.5L13 5.5"/></svg>
             </button>
@@ -960,7 +986,7 @@
           </div>
 
           <div class="faq-item">
-            <button class="faq-q" aria-expanded="false" aria-controls="faq-9">
+            <button id="faq-9-btn" class="faq-q" aria-expanded="false" aria-controls="faq-9">
               <span>What styles does Mourya specialise in?</span>
               <svg class="faq-chevron" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5.5L8 10.5L13 5.5"/></svg>
             </button>
@@ -978,6 +1004,7 @@
 
 <!-- ============ FOOTER ============ -->
 <div class="divider" aria-hidden="true"></div>
+</main>
 <footer>
   <div class="container">
     <p class="copy">&copy; 2026 Tangerine Mudhouse Tattoos &middot; Bengaluru</p>
@@ -999,23 +1026,45 @@
 </div>
 
 <script>
-  // border band data URI for gallery shell
-  (function(){
-    var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="40" height="18" viewBox="0 0 40 18">'
-      + '<g fill="none" stroke="%23F5EDD8" stroke-width="1.4" stroke-linejoin="round" stroke-linecap="round">'
-      + '<path d="M0,13 L10,4 L20,13 M20,4 L30,13 L40,4"/>'
-      + '<circle cx="5" cy="16" r="1.1" fill="%23F5EDD8" stroke="none"/>'
-      + '<circle cx="15" cy="16" r="1.1" fill="%23F5EDD8" stroke="none"/>'
-      + '<circle cx="25" cy="16" r="1.1" fill="%23F5EDD8" stroke="none"/>'
-      + '<circle cx="35" cy="16" r="1.1" fill="%23F5EDD8" stroke="none"/></g></svg>';
-    document.documentElement.style.setProperty('--border-band', "url('data:image/svg+xml;utf8," + svg + "')");
-  })();
+  // focus trap helper
+  function getFocusable(container) {
+    return Array.prototype.slice.call(
+      container.querySelectorAll('a[href],button:not([disabled]),[tabindex]:not([tabindex="-1"])')
+    ).filter(function(el){ return el.offsetParent !== null; });
+  }
+  function makeTrapHandler(container) {
+    return function(e) {
+      if (e.key !== 'Tab') return;
+      var els = getFocusable(container);
+      if (!els.length) return;
+      var first = els[0], last = els[els.length - 1];
+      if (e.shiftKey) {
+        if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+      } else {
+        if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    };
+  }
 
   // mobile menu
   var overlay = document.getElementById('navOverlay');
   var openBtn = document.getElementById('openMenu');
-  function openMenu(){ overlay.classList.add('open'); openBtn.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden'; }
-  function closeMenu(){ overlay.classList.remove('open'); openBtn.setAttribute('aria-expanded','false'); document.body.style.overflow=''; }
+  var menuTrap = makeTrapHandler(overlay);
+  function openMenu(){
+    overlay.classList.add('open');
+    openBtn.setAttribute('aria-expanded','true');
+    document.body.style.overflow='hidden';
+    overlay.addEventListener('keydown', menuTrap);
+    var first = getFocusable(overlay)[0];
+    if (first) first.focus();
+  }
+  function closeMenu(){
+    overlay.classList.remove('open');
+    openBtn.setAttribute('aria-expanded','false');
+    document.body.style.overflow='';
+    overlay.removeEventListener('keydown', menuTrap);
+    openBtn.focus();
+  }
   openBtn.addEventListener('click', openMenu);
   document.getElementById('closeMenu').addEventListener('click', closeMenu);
   overlay.querySelectorAll('[data-close]').forEach(function(a){
@@ -1069,26 +1118,43 @@
     var lbImg = document.getElementById('lbImg');
     var lbCap = document.getElementById('lbCap');
     var lbCount = document.getElementById('lbCount');
+    var lbCloseBtn = document.getElementById('lbClose');
     var cur = 0;
     var total = figs.length;
+    var triggerEl = null;
+    var lbTrap = makeTrapHandler(box);
 
     function show(i){
       cur = (i + total) % total;
       var fig = figs[cur];
       var img = fig.querySelector('img');
-      lbImg.src = img.getAttribute('src');
+      lbImg.src = img.currentSrc || img.getAttribute('src');
       lbImg.alt = img.getAttribute('alt') || '';
       lbCap.textContent = '';
       lbCount.textContent = String(cur+1).padStart(2,'0') + ' / ' + String(total).padStart(2,'0');
     }
-    function open(i){ show(i); box.classList.add('open'); box.setAttribute('aria-hidden','false'); document.body.style.overflow='hidden'; }
-    function close(){ box.classList.remove('open'); box.setAttribute('aria-hidden','true'); document.body.style.overflow=''; }
+    function open(i, trigger){
+      triggerEl = trigger || null;
+      show(i);
+      box.classList.add('open');
+      box.setAttribute('aria-hidden','false');
+      document.body.style.overflow='hidden';
+      box.addEventListener('keydown', lbTrap);
+      lbCloseBtn.focus();
+    }
+    function close(){
+      box.classList.remove('open');
+      box.setAttribute('aria-hidden','true');
+      document.body.style.overflow='';
+      box.removeEventListener('keydown', lbTrap);
+      if (triggerEl) triggerEl.focus();
+    }
 
     figs.forEach(function(fig, i){
-      fig.addEventListener('click', function(){ open(i); });
-      fig.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); open(i); } });
+      fig.addEventListener('click', function(){ open(i, fig); });
+      fig.addEventListener('keydown', function(e){ if(e.key==='Enter'||e.key===' '){ e.preventDefault(); open(i, fig); } });
     });
-    document.getElementById('lbClose').addEventListener('click', close);
+    lbCloseBtn.addEventListener('click', close);
     document.getElementById('lbPrev').addEventListener('click', function(e){ e.stopPropagation(); show(cur-1); });
     document.getElementById('lbNext').addEventListener('click', function(e){ e.stopPropagation(); show(cur+1); });
     box.addEventListener('click', function(e){ if(e.target===box) close(); });
